@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive POMO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="appTitle">Progressive POMO</h1>
+        <div class="timer-controls">
+            <input type="number" id="timeInput" placeholder="mins" min="1">
+            <button id="startBtn">Start</button>
+            <button id="stopBtn">Stop</button>
+        </div>
+        <div class="timer-display">
+            <p id="timer">00:00</p>
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+        <div class="feedback-form" style="display: none;">
+			<p>How would you rate your focus during this time block?</p>
+			<div class="radio-group">
+				<label class="custom-radio">
+					<input type="radio" name="focusRating" value="1">
+					<span class="radio-btn"></span>
+					<span class="radio-label">1 - I experienced FLOW</span>
+				</label>
+				<label class="custom-radio">
+					<input type="radio" name="focusRating" value="2">
+					<span class="radio-btn"></span>
+					<span class="radio-label">2 - I felt highly focused</span>
+				</label>
+				<label class="custom-radio">
+					<input type="radio" name="focusRating" value="3">
+					<span class="radio-btn"></span>
+					<span class="radio-label">3 - My focus was good</span>
+				</label>
+				<label class="custom-radio">
+					<input type="radio" name="focusRating" value="4">
+					<span class="radio-btn"></span>
+					<span class="radio-label">4 - I felt distracted</span>
+				</label>
+			</div>
+			<textarea id="notesInput" placeholder="Add any notes here (optional)"></textarea>
+			<button id="submitFeedback">Submit Feedback</button>
+			<button id="extendTime">Extend Time by 10 Minutes</button>
+			<button id="takeBreak" class="break-button">Take a Break</button>
+		</div>
+        <div class="time-records">
+            <h2>Time Blocks and Ratings</h2>
+            <table id="recordsTable">
+                <thead>
+                    <tr>
+                        <th>Original Time Block</th>
+                        <th>Focus Rating</th>
+                    </tr>
+                </thead>
+                <tbody id="recordsBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <audio id="notificationSound" src="notification.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
